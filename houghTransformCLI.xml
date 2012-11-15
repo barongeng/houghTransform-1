@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+  <category>Segmentation</category>
+  <title>Hough Transform</title>
+  <description><![CDATA[Apply a gaussian blurr to an image]]></description>
+  <version>1.0</version>
+  <documentation-url>http://wiki.slicer.org/slicerWiki/index.php/Documentation/4.2/Modules/iGyne</documentation-url>
+  <license/>
+  <contributor>Guillaume Pernelle (BWH)</contributor>
+  <acknowledgements><![CDATA[This module implements the work of The GoFigure Dev. Team. at Megason Lab, Systems biology, Harvard Medical school, 2009]]></acknowledgements>
+  <parameters>
+    <label>IO</label>
+    <description>Input/output parameters</description>
+    <image>
+      <name>inputVolume</name>
+      <label>Input MR Image</label>
+      <channel>input</channel>
+      <index>0</index>
+      <description><![CDATA[Input Volume]]></description>
+    </image>
+    <image>
+      <name>outputVolume</name>
+      <label>Output Label Image</label>
+      <channel>output</channel>
+      <index>1</index>
+      <description><![CDATA[Output Label. Use 'Create New']]></description>
+    </image>
+  </parameters>
+  <parameters>
+    <label>Hough Transform Parameters</label>
+      <description><![CDATA[Parameters for Hough Transform]]></description>
+      <integer>
+        <name>numberOfSpheres</name>
+        <label>Number of Spheres</label>
+        <longflag>--nbSpheres</longflag>
+        <default>8</default>
+        <description><![CDATA[Number of circles to be detected]]></description>
+      </integer>
+      <double>
+        <name>minRadius</name>
+        <label>Radius Min</label>
+        <longflag>--minRadius</longflag>
+        <default>0</default>
+        <description><![CDATA[Set the minimal radius. 0 by default]]></description>
+      </double>
+      <double>
+        <name>maxRadius</name>
+        <label>Radius Max</label>
+        <longflag>--maxRadius</longflag>
+        <default>6.3</default>
+        <description><![CDATA[Set the maximal radius.]]></description>
+      </double>
+       <double>
+        <name>sigmaGradient</name>
+        <label>Sigma Gradient</label>
+        <longflag>--sigmaGradient</longflag>
+        <default>1</default>
+        <description><![CDATA[Scale of the DoG filter]]></description>
+      </double>
+       <double>
+        <name>variance</name>
+        <label>Variance</label>
+        <longflag>--variance</longflag>
+        <default>0.5</default>
+        <description><![CDATA[Blur the accumulator in order to find the maximum. Variance is a parameter of a gaussian filter]]></description>
+      </double>
+       <double>
+        <name>sphereRadiusRatio</name>
+        <label>Sphere Radius Ratio</label>
+        <longflag>--sphereRadiusRatio</longflag>
+        <default>10</default>
+        <description><![CDATA[Radius Max]]></description>
+      </double>
+       <double>
+        <name>votingRadiusRatio</name>
+        <label>Voting Radius Ratio</label>
+        <longflag>--votingRadiusRatio</longflag>
+        <default>10</default>
+        <description><![CDATA[Radius Max]]></description>
+      </double>
+       <double>
+        <name>threshold</name>
+        <label>Intensity Threshold</label>
+        <longflag>--threshold</longflag>
+        <default>100</default>
+        <description><![CDATA[Threshold to specify the intensity domain to use. Attention, lower the value will increase the computation time.]]></description>
+      </double>
+       <double>
+        <name>outputThreshold</name>
+        <label>Output Threshold</label>
+        <longflag>--outputThreshold</longflag>
+         <default>0.6</default>
+        <description><![CDATA[Each circle is being given a probability. This value thresholds the circles on this criteria.]]></description>
+      </double>
+       <double>
+        <name>gradientThreshold</name>
+        <label>Gradient Threshold</label>
+        <longflag>--gradientThreshold</longflag>
+         <default>100</default>
+        <description><![CDATA[Gradient Threshold]]></description>
+      </double>
+       <integer>
+        <name>nbOfThreads</name>
+        <label>Number of Threads</label>
+        <longflag>--nbOfThreads</longflag>
+        <default>8</default>
+        <description><![CDATA[Number of threads to assign for this task]]></description>
+      </integer>
+       <double>
+        <name>samplingRatio</name>
+        <label>Sampling Ratio</label>
+        <longflag>--samplingRatio</longflag>
+         <default>1</default>
+        <description><![CDATA[By Default 1. Other values can lead Slicer to crash. To be debugged]]></description>
+      </double>
+  </parameters>
+</executable>
