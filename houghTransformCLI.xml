@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <executable>
   <category>Segmentation</category>
-  <title>Hough Transform</title>
+  <title>Circle Detection (Hough Transform)</title>
   <description><![CDATA[Apply a gaussian blurr to an image]]></description>
   <version>1.0</version>
-  <documentation-url>http://wiki.slicer.org/slicerWiki/index.php/Documentation/4.2/Modules/iGyne</documentation-url>
+  <documentation-url>http://wiki.slicer.org/slicerWiki/index.php/Documentation/4.2/Modules/circleDetectionHoughTransform</documentation-url>
   <license/>
   <contributor>Guillaume Pernelle (BWH)</contributor>
   <acknowledgements><![CDATA[This module implements the work of The GoFigure Dev. Team. at Megason Lab, Systems biology, Harvard Medical school, 2009]]></acknowledgements>
