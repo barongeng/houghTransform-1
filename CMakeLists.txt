@@ -37,7 +37,8 @@ if(NOT Slicer_SOURCE_DIR)
   set(EXTENSION_DESCRIPTION "Performs circle detection in volume using an Hough Transform")
   set(EXTENSION_CATEGORY "Segmentation")
   set(EXTENSION_HOMEPAGE "http://www.slicer.org/slicerWiki/index.php/Documentation/4.2/Extensions/CircleDetectionHoughTransform")
-
+  set(EXTENSION_ICONURL "http://www.slicer.org/slicerWiki/images/6/6e/HtIcon.png")
+  set(EXTENSION_SCREENSHOTURLS "http://www.slicer.org/slicerWiki/images/7/70/CirclesDetectionHoughTransform-result.png")
   include(SlicerEnableExtensionTesting)
 endif()
 
